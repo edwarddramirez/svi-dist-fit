@@ -1,3 +1,5 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/edwarddramirez/derivative-tinygp/HEAD) [![License: CC0-1.0](https://img.shields.io/badge/License-CC0%201.0-brightgreen.svg)](https://creativecommons.org/publicdomain/zero/1.0/legalcode.en) ![Python](https://img.shields.io/badge/python-3.11.4-blue.svg) ![Repo Size](https://img.shields.io/github/repo-size/edwarddramirez/svi-dist-fit) 
+
 # svi-dist-fit
 Summary notebooks showing how to fit a target distribution with a class of distributions using SVI (via NumPyro). Unlike standard SVI, our "data" is a distribution rather than a finite collection of samples.
 
