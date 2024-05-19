@@ -1,7 +1,7 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/edwarddramirez/svi-dist-fit/HEAD) [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/license/mit) ![Python](https://img.shields.io/badge/python-3.11.4-blue.svg) ![Repo Size](https://img.shields.io/github/repo-size/edwarddramirez/svi-dist-fit) 
 
 # svi-dist-fit
-Summary notebooks showing how to fit a target distribution with a class of distributions using SVI (via NumPyro). Unlike standard SVI, our "data" is a distribution rather than a finite collection of samples.
+Summary notebooks showing how to fit a target distribution with a class of distributions using SVI (via NumPyro). Unlike standard SVI, our "data" is a distribution rather than a finite collection of samples. This is the first time fitting distributions with other distributions is performed using SVI-type optimization.
 
 # Notebooks
 1. `01_kl_simple.ipynb` - Fitting a parametric model with another parametric model
