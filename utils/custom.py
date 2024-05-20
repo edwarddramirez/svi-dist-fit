@@ -105,3 +105,28 @@ def svi_loop(rng_key, num_steps, svi, x, xu, y, gp_rng_key = jax.random.PRNGKey(
     
     SVIRunResult = namedtuple("SVIRunResult", ["params", "state", "losses"])
     return SVIRunResult(params, svi_state, losses)
+
+def svi_loop_poisson(rng_key, num_steps, svi, x, pred, gp_rng_key = jax.random.PRNGKey(0)):
+    '''
+    Simple Loop for SVI optimization in 03_kl_poisson.ipynb notebook
+    Identical to above loop code but replace xu and y with pred
+    '''
+    # svi update function
+    def body_fn(i, svi_state):
+        gp_rng_key = jax.random.split(svi_state.rng_key)[-1]
+        svi_state, train_loss = svi.update(svi_state, x, pred, gp_rng_key)
+        return svi_state, train_loss
+    
+    # initial svi state
+    svi_state = svi.init(rng_key, x, pred, gp_rng_key)
+    
+    # loop over num_steps
+    losses = [] 
+    for n in tqdm(range(num_steps)):
+        svi_state, loss = jit(body_fn)(n, svi_state)
+        losses.append(loss) 
+        
+    params = svi.get_params(svi_state)
+    
+    SVIRunResult = namedtuple("SVIRunResult", ["params", "state", "losses"])
+    return SVIRunResult(params, svi_state, losses)
