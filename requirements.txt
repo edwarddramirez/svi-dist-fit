@@ -1,8 +1,10 @@
 jax==0.4.13
 jaxlib==0.4.13
 matplotlib==3.7.2
+corner==2.2.2
 numpy==1.25.1
 numpyro==0.12.1
 scipy==1.11.1
 tinygp==0.2.3
 tqdm==4.65.0
+
