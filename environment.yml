@@ -1,4 +1,4 @@
-name: derivative-tinygp
+name: svi-dist-fit
 channels:
   - conda-forge
   - defaults
